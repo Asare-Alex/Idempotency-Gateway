@@ -11,8 +11,7 @@ app.use(idempotencyMiddleware);
 
 app.use("/", paymentRoutes);
 
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 console.log(
 `Idempotency Gateway running on port ${PORT}`
