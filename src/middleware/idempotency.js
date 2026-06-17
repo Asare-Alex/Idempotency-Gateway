@@ -37,7 +37,7 @@ error:
 });
 }
 
-```
+
 if (existing.status === "COMPLETED") {
   res.set("X-Cache-Hit", "true");
 
@@ -45,18 +45,18 @@ if (existing.status === "COMPLETED") {
     .status(existing.response_status)
     .json(JSON.parse(existing.response_body));
 }
-```
+
 
 }
 
 if (inFlightRequests.has(key)) {
 const result = await inFlightRequests.get(key);
 
-```
+
 res.set("X-Cache-Hit", "true");
 
 return res.status(result.status).json(result.body);
-```
+
 
 }
 
